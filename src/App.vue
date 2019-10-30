@@ -1,32 +1,41 @@
 <template>
+<v-app>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <MobileNavbar v-if="mobile" />
+    <Navbar v-if="mobile == false" />
+    <router-view />
   </div>
+  </v-app>
 </template>
 
 <style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+  #app {
+    background: url('./assets/background.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
   }
-}
 </style>
+
+<script>
+  import Navbar from './components/Navbar'
+  import MobileNavbar from './components/MobileNavbar'
+
+  export default {
+    data(){
+      return {
+        mobile: false
+      }
+    },
+    mounted() {
+      if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        this.mobile = true
+      }
+    },
+    components: {
+      MobileNavbar,
+      Navbar,
+    }
+  };
+</script>
