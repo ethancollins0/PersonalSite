@@ -10,7 +10,11 @@
       </div>
     </div>
     <body v-bind:class="{body_mobile: this.$store.state.mobile}">
-      <article class='about-container' >
+      <article>
+        <div class='about-title'>
+          <h3>About Me</h3>
+        </div>
+        
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. </p>
 
         <p>Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </p>
@@ -35,16 +39,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-width: 310px;
 
     .header {
       border-radius: 5px 5px 0 0;
       margin-top: 10px;
-      width: 50%;
+      width: 60%;
       background: rgba(255, 255, 255, 0.8);
       display: flex;
       flex-direction: row;
-      justify-content: space-around;
+      justify-content: space-evenly;
       height: 200px;
+      min-width: 280px;
 
       .title-container {
         display: flex;
@@ -56,10 +62,11 @@
       .picture-container {
         display: flex;
         align-items: center;
-        width: max-content;
-        max-width: 160px;
+        width: auto;
+        max-width: 200px;
         img {
           height: 80%;
+          width: auto;
           border-radius: 5px;
         }
       }
@@ -69,8 +76,13 @@
       width: 90%;
       height: 150px;
       .picture-container {
+        width: auto;
+        max-width: 120px;
+        display: flex;
+        justify-content: center;
         img {
-          height: 80%;
+          height: 70%;
+          width: auto;
         }
       }
       .title-container {
@@ -78,7 +90,7 @@
             font-size: 25px;
           }
           h2 {
-            font-size: 20px;
+            font-size: 16px;
           }
         }
     }
@@ -91,13 +103,27 @@
     }
 
     body {
+      min-width: 280px;
       display: flex;
       justify-content: center;
+
       article {
         padding: 10px;
-        width: 50%;
+        width: 60%;
         background: rgba(255, 255, 255, 0.8);
+        border-radius: 0 0 5px 5px;
+        -webkit-box-shadow: 0 8px 6px -6px black;
+        -moz-box-shadow: 0 8px 6px -6px black;
+        box-shadow: 0 8px 6px -6px black;
+
+        .about-title {
+          display: flex;
+          justify-content: center;
+          margin-bottom: 20px;
+        }
+
       }
+      margin-bottom: 30px;
     }
   }
 </style>
