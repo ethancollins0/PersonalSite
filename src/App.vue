@@ -23,14 +23,14 @@
   import MobileNavbar from './components/MobileNavbar'
 
   export default {
-    data(){
-      return {
-        mobile: false
+    computed: {
+      mobile(){
+        return this.$store.state.mobile
       }
     },
     mounted() {
       if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-        this.mobile = true
+        this.$store.commit('mobile')
       }
     },
     components: {

@@ -54,7 +54,10 @@
             }
 
             .active {
-                background: rgba(0, 0, 0, 0.5);
+                margin-top: 10px;
+                h3 {
+                    font-weight: bold;
+                }
             }
 
             h3 {
