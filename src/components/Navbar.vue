@@ -1,12 +1,12 @@
 <template>
-        <nav class='navbar'>
+        <nav class='navbar' id='navbar'>
             <div class='navbar-container' v-bind:class="{ fixed: belowRange }">
                 <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Projects</li>
-                    <li>Blogs</li>
-                    <li>Contact</li>
+                    <li @click='handleClick' v-bind:class="{ active: siteSection == 'home' }" name='home'>Home</li>
+                    <li @click='handleClick' v-bind:class="{ active: siteSection == 'about' }" name='about'>About</li>
+                    <li @click='handleClick' v-bind:class="{ active: siteSection == 'projects' }" name='projects'>Projects</li>
+                    <li @click='handleClick' v-bind:class="{ active: siteSection == 'blogs' }" name='blogs'>Blogs</li>
+                    <li @click='handleClick' v-bind:class="{ active: siteSection == 'contact' }" name='contact'>Contact</li>
                 </ul>
             </div>
         </nav>
@@ -16,7 +16,11 @@
     export default {
         methods: {
             handleClick(event){
-                this.$store.commit('siteSection', event.target.getAttribute('name'))
+                const name = event.target.getAttribute('name')
+                this.$store.commit('siteSection', name)
+                name == 'about'
+                    ? document.querySelector('#navbar').scrollIntoView({ behavior: 'smooth' })
+                    : document.querySelector(`#${event.target.getAttribute('name')}`).scrollIntoView({ behavior: 'smooth' })
             },
             handleScroll(){
                 console.log(this.belowRange)
@@ -25,6 +29,10 @@
                 } else {
                     this.belowRange = false
                 }
+                this.checkComponent()
+            },
+            checkComponent(){
+
             }
         },
         data(){
@@ -54,13 +62,7 @@
 <style lang="scss">
         .navbar {
             width: 100%;
-            background-color: #333;
-            color: #fff;
-            font-size: 1.5rem;
-            text-transform: uppercase;
-            font-weight: 100;
             height: 4rem;
-            line-height: 4rem;
 
             .navbar-container {
                 width: 100%;
@@ -74,13 +76,15 @@
                 line-height: 4rem;
                 border-bottom: 3px solid #04C2C9;
 
-
             ul {
-                float: left;
                 list-style: none;
+                box-sizing: border-box;
+                height: 4rem;
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
 
                 li {
-                    display: inline-block;
                     padding: 0 1.5rem;
                     cursor: pointer;
                 }
@@ -88,7 +92,11 @@
                 li:hover {
                     color: red;
                 }
-            }  
+            }
+
+            .active {
+                color: red;
+            }
         }       
     }
 

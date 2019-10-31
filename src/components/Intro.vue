@@ -1,10 +1,20 @@
 <template>
-    <div class='intro-container'>
+    <div id='home' class='intro-container'>
         <h1>Hi, I'm <span class='highlight'>Ethan Collins.</span></h1>
         <h2>I'm a full-stack software developer.</h2>
-        <button class='intro-button'>See my Work <i></i> </button>
+        <button @click="handleClick" class='intro-button'>See my Work <i></i> </button>
     </div>
 </template>
+
+<script>
+    export default {
+        methods: {
+            handleClick(){
+                document.querySelector('#navbar').scrollIntoView({ behavior: 'smooth' })
+            }
+        }
+    }
+</script>
 
 <style lang='scss'>
     .intro-container {
@@ -30,6 +40,5 @@
             border: 2px solid black;
             outline: none;
         }
-
     }
 </style>
