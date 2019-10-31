@@ -6,21 +6,23 @@
                 <h1 >Projects</h1>
             </div>
             <div class='projects-container'>
-
+                <Project :project="project" v-for="(project, index) in projects" :key="index"/>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+    import Project from './Project'
+
     export default {
-        data: () => {
-            return {
-                test: false
+        computed: {
+            projects(){
+                return this.$store.state.projects
             }
         },
-        mounted(){
-            console.log(this.test)
+        components: {
+            Project
         }
     }
 </script>
@@ -29,6 +31,7 @@
     .projects {
         display: flex;
         flex-direction: column;
+        flex-wrap: wrap;
         align-items: center;
         height: calc(100vh + 53px);
 
@@ -50,6 +53,7 @@
                 justify-items: center;
                 width: 60%;
                 border-bottom: 1px solid black;
+                margin-bottom: 30px;
 
                 h1 {
                     font-size: 25pt;
@@ -58,7 +62,10 @@
             }
 
             .projects-container {
-                width: 80%;
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-evenly;
+                width: 100%;
             }
         }  
     }

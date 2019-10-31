@@ -12,7 +12,10 @@
 
 <script>
     export default {
-
+        mounted(){
+            let about = document.querySelector('#navbar').getBoundingClientRect()
+            console.log('top:', about.top, 'view-height:', screen.height)
+        }
     }
 </script>
 
@@ -73,9 +76,16 @@
 
     @media screen and (max-width: 600px) {
         .about {
-            .about-content {
-                display: flex;
-                flex-direction: column;
+            .about-container {
+                .about-content {
+                    display: flex;
+                    flex-direction: column;
+
+                    p {
+                        width: 100%;
+                        font-size: 14px;
+                    }
+                }
             }
         }
     }

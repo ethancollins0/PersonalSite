@@ -31,6 +31,15 @@
         justify-content: center;
         border-bottom: 1px solid black;
 
+        h1 {
+            text-align: center;
+        }
+        
+        h2 {
+            text-align: center;
+        }
+
+
         .highlight {
             color: red;
         }

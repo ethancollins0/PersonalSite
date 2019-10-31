@@ -34,7 +34,7 @@
 <style lang="scss">
   #app {
     background: #fff;
-    width: calc(100vw);
+    width: 100%;
   }
 </style>
 

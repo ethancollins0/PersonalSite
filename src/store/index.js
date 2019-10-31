@@ -15,7 +15,7 @@ export default new Vuex.Store({
         github: 'https://github.com/ethancollins0/capstone-frontend',
         image_url: '@/assets/water_pi.jpg',
         demo: 'https://capstone-frontend.firebaseapp.com/login',
-        technologies: ['Node.js,', 'Express.js,', 'Vue.js,', 'Vuex,', 'Socket.io,', 'Python,', 'PostgreSQL,', 'Raspberry Pi', ]
+        technologies: ['Node.js', 'Express.js', 'Vue.js', 'Vuex', 'Socket.io', 'Python', 'PostgreSQL', 'Raspberry Pi', ]
       },
       {
         title: 'Survey Manager',
@@ -23,7 +23,7 @@ export default new Vuex.Store({
         github: 'https://github.com/ethancollins0/mod-4-frontend',
         image_url: '@/assets/water_pi.jpg',
         demo: 'https://survey-manager-9c175.firebaseapp.com/login',
-        technologies: ['Node.js,', 'Express.js,', 'React.js,', 'PostgreSQL']
+        technologies: ['Node.js', 'Express.js', 'React.js', 'PostgreSQL']
       },
     ]
   },
