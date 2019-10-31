@@ -33,21 +33,32 @@
 
         h1 {
             text-align: center;
+            color: #fff;
         }
         
         h2 {
             text-align: center;
+            color: #fff;
         }
 
 
         .highlight {
-            color: red;
+            color: #ffa500;
+            font-weight: bold;
         }
 
         .intro-button {
             padding: 0 10px;
             border: 2px solid black;
             outline: none;
+            background-color: white;
+            color: black;
+            font-weight: bold;
+        }
+
+        .intro-button:hover {
+            background-color: #333;
+            color: white;
         }
     }
 </style>
