@@ -1,79 +1,103 @@
 <template>
-    <div class='navbar'>
-            <!-- <img src='@/assets/logo.png' /> -->
-            <div class='link-container'>
-                <div class='text-container' v-bind:class="{active: active == 'about'}" ><h3 @click="handleClick" name='about'>About</h3></div>
-                <div class='text-container' v-bind:class="{active: active == 'blogs'}" ><h3 @click="handleClick" name='blogs'>Blogs</h3></div>
-                <div class='text-container' v-bind:class="{active: active == 'projects'}" ><h3 @click="handleClick" name='projects'>Projects</h3></div>
-                <div class='text-container' v-bind:class="{active: active == 'contact'}" ><h3 @click="handleClick" name='contact'>Contact</h3></div>
+        <nav class='navbar'>
+            <div class='navbar-container' v-bind:class="{ fixed: belowRange }">
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Projects</li>
+                    <li>Blogs</li>
+                    <li>Contact</li>
+                </ul>
             </div>
-    </div>
+        </nav>
 </template>
 
 <script>
     export default {
-       computed: {
-           active(){
-               return this.$store.state.selected_nav
-           }
-       },
-       methods: {
-           handleClick(event){
-               let name = event.target.getAttribute('name')
-               this.$store.commit('selectNav', name)
-               this.$router.history.push(`/${name}`)
-           }
-       }
+        methods: {
+            handleClick(event){
+                this.$store.commit('siteSection', event.target.getAttribute('name'))
+            },
+            handleScroll(){
+                console.log(this.belowRange)
+                if (window.pageYOffset >= this.$store.state.viewheight){
+                    this.belowRange = true
+                } else {
+                    this.belowRange = false
+                }
+            }
+        },
+        data(){
+            return {
+                belowRange: false
+            }
+        },
+        computed: {
+            siteSection(){
+                return this.$store.state.siteSection
+            },
+        },
+        mounted(){
+            window.addEventListener('scroll', this.handleScroll)
+            if (window.pageYOffset >= this.viewheight){
+                this.belowRange = true
+            } else {
+                this.belowRange = false
+            }
+        },
+        destroyed(){
+            window.removeEventListener('scroll', this.handleScroll)
+        },
     }
 </script>
 
 <style lang="scss">
-    .navbar {
-        width: 100%;
-        height: 50px;
-        // background-color: grey;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
+        .navbar {
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            font-weight: 100;
+            height: 4rem;
+            line-height: 4rem;
 
-        .link-container {
-            height: 100%;
-            display: flex;
-            align-items: center;
-            flex-direction: row;
+            .navbar-container {
+                width: 100%;
+                margin: 0 auto;
+                background-color: #333;
+                color: #fff;
+                font-size: 1.5rem;
+                text-transform: uppercase;
+                font-weight: 100;
+                height: 4rem;
+                line-height: 4rem;
+                border-bottom: 3px solid #04C2C9;
 
-            .text-container {
-                height: 100%;
-                display: flex;
-                justify-items: center;
-                align-items: center;
-                margin-top: 20px;
-                // background-clip: content-box;
-                padding-right: -10px;
-                padding-left: -10px;
-            }
 
-            .active {
-                margin-top: 10px;
-                h3 {
-                    font-weight: bold;
+            ul {
+                float: left;
+                list-style: none;
+
+                li {
+                    display: inline-block;
+                    padding: 0 1.5rem;
+                    cursor: pointer;
                 }
-            }
 
-            h3 {
-                margin: 30px;
-                margin-top: 0;
-                margin-bottom: 0;
-                -moz-box-sizing: border-box;
-                -webkit-box-sizing: border-box;
-                box-sizing: border-box;
-                border-bottom: 1px solid black;
-            }
-
-            h3:hover {
-                cursor: pointer;
-            }
-        }
+                li:hover {
+                    color: red;
+                }
+            }  
+        }       
     }
 
+    .fixed {
+        position: fixed;
+        top: 0;
+        z-index: 20;
+        margin-bottom: 30px;
+    }
+
+        
 </style>

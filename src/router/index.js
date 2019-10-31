@@ -1,39 +1,21 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import About from '../views/About'
-import Contact from '../views/Contact'
-import Blogs from '../views/Blogs'
-import Projects from '../views/Projects'
+import Index from '../views/Index'
 
 Vue.use(VueRouter)
 
-function about(){
-  router.history.push('/about')
+function index(){
+  router.history.push('/')
 }
 
 const routes = [
   {
-    path: '/about',
-    name: 'about',
-    component: About
+    path: '/',
+    name: 'index',
+    component: Index
   },
   {
-    path: '/contact', 
-    name: 'contact',
-    component: Contact
-  },
-  {
-    path: '/blogs', 
-    name: 'blogs',
-    component: Blogs
-  },
-  {
-    path: '/projects', 
-    name: 'projects',
-    component: Projects
-  },
-  {
-    beforeEnter: about,
+    beforeEnter: index,
     path: '*',
   }
 ]

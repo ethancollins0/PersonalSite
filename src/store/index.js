@@ -5,8 +5,9 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    selected_nav: '',
+    siteSection: '',
     mobile: false,
+    viewheight: 0,
     projects: [
       {
         title: 'Water.pi',
@@ -27,11 +28,17 @@ export default new Vuex.Store({
     ]
   },
   mutations: {
-    selectNav(state, name){
-      state.selected_nav = name
+    siteSection(state, name){
+      state.siteSection = name
     },
     mobile(state){
       state.mobile = true
+    },
+    viewheight(state, height){
+      state.viewheight = height
+    },
+    belowRange(state, bool){
+      state.belowRange = bool
     }
   },
   actions: {
