@@ -1,7 +1,7 @@
 <template>
     <div id='home' class='intro-container'>
         <h1>Hi, I'm <span class='highlight'>Ethan Collins.</span></h1>
-        <h2>I'm a full-stack software developer.</h2>
+        <h2>I'm a full-stack web developer.</h2>
         <button @click="handleClick" class='intro-button'>See my Work <i></i> </button>
     </div>
 </template>

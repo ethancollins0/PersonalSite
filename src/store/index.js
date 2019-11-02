@@ -19,7 +19,7 @@ export default new Vuex.Store({
       },
       {
         title: 'Survey Manager',
-        description: 'A Web app for property managers to organize and schedule surveys',
+        description: 'A Web app to organize and schedule property surveys',
         github: 'https://github.com/ethancollins0/mod-4-frontend',
         image_url: '@/assets/water_pi.jpg',
         demo: 'https://survey-manager-9c175.firebaseapp.com/login',

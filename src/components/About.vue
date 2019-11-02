@@ -4,7 +4,8 @@
             <h1>About</h1>
             <div class='about-content'>
                 <img src='@/assets/profile.jpg' />
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. </p>
+                <p>Full-stack web developer with a background in computer science. I started out with computer science courses in High School, where I took courses in computer science and technical drafting, and became interested in building computers.  This piqued my interest in machinery and computer hardware, which drove me to pursue a degree in computer engineering. </p>
+                <p>While completing some computer science and electronics courses in college, I found that having learned about circuitry and computer logic, what I truly loved doing was working with software. I began researching coding bootcamps in early 2019, and decided to make the educational leap to study programming at Flatiron School, with a graduation date of October 2019.</p>
             </div>
         </div>
     </div>
@@ -38,12 +39,12 @@
 
             .about-content {
                 width: 70%;
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: space-around;
+                // display: flex;
+                // flex-direction: row;
+                // align-items: center;
+                // justify-content: space-around;
                 img {
-                    height: 180px;
+                    height: 240px;
                     width: auto;
                     padding: 20px;
                     float: left;
@@ -52,8 +53,8 @@
                 p {
                     margin: 0;
                     text-indent: 50px;
-                    width: 70%;
-                    float: left;
+                    width: 100%;
+                    color: black;
                 }
             }
 
@@ -76,17 +77,36 @@
 
     @media screen and (max-width: 600px) {
         .about {
+            height: 150vh;
             .about-container {
                 .about-content {
                     display: flex;
                     flex-direction: column;
+                    align-items: center;
+
+                    img {
+                        height: 240px;
+                        width: 211px;
+                    }
 
                     p {
                         width: 100%;
-                        font-size: 14px;
+                        font-size: 16px;
                     }
                 }
             }
+        }
+    }
+
+    @media screen and (max-width: 450px) {
+        .about {
+            height: 170vh;
+        }
+    }
+
+    @media screen and (max-width: 350px) {
+        .about {
+            height: 190vh;
         }
     }
 </style>

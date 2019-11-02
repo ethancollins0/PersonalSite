@@ -20,7 +20,6 @@
         methods: {
             handleClick(event){
                 const name = event.target.getAttribute('name')
-                this.$store.commit('siteSection', name)
                 name == 'about'
                     ? document.querySelector('#navbar').scrollIntoView({ behavior: 'smooth' })
                     : document.querySelector(`#${event.target.getAttribute('name')}`).scrollIntoView({ behavior: 'smooth' })

@@ -37,7 +37,7 @@
 
 
         .divider {
-            height: 4rem;
+            height: 1rem;
         }
 
         .content-container {
