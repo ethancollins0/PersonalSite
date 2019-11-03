@@ -3,13 +3,14 @@
         <div class='project-title'>
             <img src='@/assets/water.pi.png' />
             <div class='project-info'>
-                <span class='title-division'></span>
                 <span class='title-division'>
-                    <h2>{{project.title}}</h2>
-                </span>
-                <span class='title-division links'>
-                    <img src='@/assets/github.png' alt='github' @click="handleClick" />
-                    <a v-if="project.demo" :href="project.demo">Demo</a>
+                    <h2>
+                        {{project.title}}
+                        <div class='links'>
+                            <span><img src='@/assets/github.png' alt='github' @click="handleClick" /></span>
+                            <span><v-icon v-if="project.demo" :size="30" :color="'#333'" @click="handleDemo">mdi-earth</v-icon></span>
+                        </div>
+                    </h2>
                 </span>
             </div>
         </div>
@@ -28,17 +29,23 @@
         methods: {
             handleClick(){
                 window.open(this.project.github, '_blank')
+            },
+            handleDemo(){
+                window.open(this.project.demo, '_blank')
             }
         }
     }
 </script>
 
 <style lang="scss">
+
     .project {
         flex-flow: row wrap;
         min-width: 250px;
         border-radius: 1px;
-        box-shadow: 5px 5px 10px black;
+        // box-shadow: 5px 5px 10px black;
+        border: 1px solid black;
+        border-radius: 2px;
         margin: 1vw;
         padding: 20px;
         width: 40%;
@@ -63,40 +70,38 @@
 
             .project-info {
                 display: flex;
-                flex-direction: row;
+                flex-direction: column;
                 width: 100%;
-                padding-bottom: 0.5rem;
+                padding-bottom: 0.4rem;
+                align-items: center;
 
-                .title-division:first-of-type {
-                    width: 30%;
-                }
+                .title-division {
+                    width: 100%;
+                    h2 {
+                        width: 100%;
+                        display: flex;
+                        align-content: center;
+                        justify-content: center;
 
-                .title-division:nth-of-type(2) {
-                    width: 40%;
-                    // background-color: black;
-                    display: flex;
-                    justify-content: center;
-                }
+                        .links {
+                            padding-left: 10px;
+                            display: flex;
+                            align-content: center;
 
+                            span {
+                                display: flex;
+                                align-items: center;
 
+                                img {
+                                    height: 25px;
+                                    width: 25px;
+                                }
 
-                .links {
-                    width: 30%;
-                    display: flex;
-                    justify-content: flex-end;
-                    align-items: center;
-                    img {
-                        height: 25px;
-                        width: auto;
-                        margin-right: 0.8rem;
-                    }
-
-                    img:hover {
-                        cursor: pointer;
-                    }
-
-                    a {
-                        margin-right: 0.8rem;
+                                img:hover {
+                                    cursor: pointer;
+                                }
+                            }
+                        }
                     }
                 }
             }

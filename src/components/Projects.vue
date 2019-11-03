@@ -34,8 +34,8 @@
         flex-wrap: wrap;
         align-items: center;
         height: max-content;
+        min-height: calc(100vh + 53px);
         padding-bottom: 53px;
-
 
         .divider {
             height: 1rem;
@@ -54,7 +54,7 @@
                 justify-items: center;
                 width: 60%;
                 border-bottom: 1px solid black;
-                margin-bottom: 30px;
+                margin-bottom: 20px;
 
                 h1 {
                     font-size: 25pt;

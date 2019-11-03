@@ -52,7 +52,7 @@
                 })
             },
             checkMobile(){
-                screen.width <= 600 
+                screen.width <= 700
                     ? this.mobile = true
                     : this.mobile = false
             }
@@ -76,12 +76,15 @@
                 this.belowRange = false
             }
             this.checkMobile()
+
+            window.addEventListener('resize', this.checkMobile)
         },
         updated(){
             this.checkMobile()
         },
         destroyed(){
             window.removeEventListener('scroll', this.handleScroll)
+            window.removeEventListener('resize')
         },
         components: {
             Dropdown

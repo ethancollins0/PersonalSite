@@ -8,6 +8,18 @@ export default new Vuex.Store({
     siteSection: '',
     mobile: false,
     viewheight: 0,
+    technologies: {
+      'JavaScript': 'https://github.com/ethancollins0/capstone-frontend',
+      'Node.js': 'https://github.com/ethancollins0/capstone-backend',
+      'Ruby on Rails': 'https://github.com/codyshaben/fantasy_football_draft_app',
+      'Express.js': 'https://github.com/ethancollins0/capstone-backend',
+      'React.js': 'https://github.com/ethancollins0/mod-4-frontend',
+      'Vue.js': 'https://github.com/ethancollins0/capstone-frontend',
+      'Vuex': 'https://github.com/ethancollins0/capstone-frontend',
+      'PostgreSQL': 'https://github.com/ethancollins0/capstone-backend',
+      'SQLite': 'https://github.com/codyshaben/fantasy_football_draft_app',
+      'Python': 'https://github.com/ethancollins0/raspberry-pi-api'
+  },
     social: {
       github: 'https://github.com/ethancollins0',
       linkedin: 'https://www.linkedin.com/in/ethan-t-collins/',
