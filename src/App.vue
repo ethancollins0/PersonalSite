@@ -36,6 +36,7 @@
       mounted(){
         this.$store.commit('viewheight', window.innerHeight + 53)
         MailtoUI.run()
+        fetch(this.$store.state.mailerUrl) //fire up heroku server for email comms
       },
   };
 </script>

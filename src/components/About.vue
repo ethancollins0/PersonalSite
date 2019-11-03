@@ -4,7 +4,7 @@
             <h1>About</h1>
             <div class='about-content'>
                 <div class='about-text'>
-                    <p>Full-stack web developer with a background in computer science. Experienced with both hardware as well as software. I went to college for 2 years pursuing a degree in computer engineering, where I took courses in computer logic, electronics, physics, and computer science, using software like MATLAB. I also have experience with AutoCAD, and reached state level for technical drafting in Texas in 2016.</p>
+                    <p>Full-stack web developer with a background in computer science. Experience with both hardware and software. I went to college for 2 years pursuing a degree in computer engineering, where I took courses in computer logic, electronics, physics, and computer science, using software like MATLAB. I also have experience with AutoCAD, and reached state level for technical drafting in Texas in 2016.</p>
                 </div>
                 <div class='about-technologies-title'>
                     <h2>Technologies</h2>

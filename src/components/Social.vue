@@ -69,6 +69,7 @@
 
         .intro-social-icon:hover {
             cursor: pointer;
+            color: black;
         } 
 
         .intro-social-anchor {

@@ -54,6 +54,7 @@
         }
 
         .intro-button {
+            transition: .5s;
             padding: 0 10px;
             border: 2px solid black;
             outline: none;
