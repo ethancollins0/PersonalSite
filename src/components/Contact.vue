@@ -61,7 +61,7 @@
     export default {
         data(){
             return {
-                failed: true,
+                failed: false,
                 loading: false,
                 success: false
             }
@@ -207,8 +207,10 @@
                         height: max-content;
                         align-items: flex-end;
                         padding: 5px;
+                        background-color: rgb(139, 116, 86);
                         
                         input {
+                            outline: none;
                             border-radius: 2px;
                             width: 100%;
                             min-width: 200px;
@@ -222,6 +224,7 @@
                         }
 
                         textarea {
+                            outline: none;
                             border-radius: 2px;
                             width: 100%;
                             height: 150px;
