@@ -1,38 +1,27 @@
 <template>
-    <div class='blogs'>
-        <section id='blogs' class='divider'></section>
+    <div class='contact'>
+        <section id='contact' class='divider'></section>
         <div class='content-container'>
-            <div class='blogs-title'>
-                <h1>Blogs</h1>
+            <div class='contact-title'>
+                <h1>Contact</h1>
             </div>
-            <div class='blogs-container'>
-                <Blog :blog="blog" v-for="(blog, index) in blogs" :key="index"/>
+            <div class='contact-container'>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-    import Blog from './Blog'
-
     export default {
-        computed: {
-            blogs(){
-                return this.$store.state.blogs
-            }
-        },
-        components: {
-            Blog
-        }
     }
 </script>
 
 <style lang="scss">
-    .blogs {   
+    .contact {   
         width: 100%;
         height: max-content;
         min-height: calc(100vh + 53px);
-        background: #f5f5f5;
+        background: #fff;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -50,14 +39,7 @@
             align-items: center;
             justify-content: center;
 
-            .blogs-container {
-                display: flex;
-                flex-flow: row wrap;
-                justify-content: space-evenly;
-                width: 100%;
-            }
-
-            .blogs-title {
+            .contact-title {
                 display: flex;
                 justify-content: center;
                 justify-items: center;

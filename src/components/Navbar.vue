@@ -23,9 +23,6 @@
                 name == 'about'
                     ? document.querySelector('#navbar').scrollIntoView({ behavior: 'smooth' })
                     : document.querySelector(`#${event.target.getAttribute('name')}`).scrollIntoView({ behavior: 'smooth' })
-                setTimeout(() => {
-                    console.log(screen.height, window.pageYOffset)
-                }, 3000)
             },
             handleScroll(){
                 if (document.querySelector('#navbar').getBoundingClientRect().top <= 0){
@@ -36,7 +33,7 @@
                 this.checkComponent()
             },
             checkComponent(){
-                let names = ['projects', 'about', 'home'] //add blogs and contact
+                let names = ['contact', 'blogs', 'projects', 'about', 'home']
                 let selected = ''
                 names.map(name => {
                     let pixels = 1
@@ -84,7 +81,7 @@
         },
         destroyed(){
             window.removeEventListener('scroll', this.handleScroll)
-            window.removeEventListener('resize')
+            window.removeEventListener('resize', this.checkMobile)
         },
         components: {
             Dropdown
@@ -137,7 +134,7 @@
         position: fixed;
         top: 0;
         z-index: 20;
-        margin-bottom: 30px;
+        // margin-bottom: 30px;
     }
 
         

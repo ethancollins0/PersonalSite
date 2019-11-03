@@ -5,6 +5,8 @@
     <Navbar />
     <About />
     <Projects />
+    <Blogs />
+    <Contact />
   </div>
   </v-app>
 </template>
@@ -13,13 +15,18 @@
   import Navbar from './components/Navbar'
   import About from './components/About'
   import Projects from './components/Projects'
+  import Blogs from './components/Blogs'
+  import Contact from './components/Contact'
+
   const MailtoUI = require('../node_modules/mailtoui/dist/mailtoui-min.js')
 
   export default {
       components: {
         Navbar,
         About,
-        Projects
+        Projects,
+        Blogs,
+        Contact
       },
       computed: {
         viewheight(){

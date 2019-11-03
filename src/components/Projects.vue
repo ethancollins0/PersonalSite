@@ -36,6 +36,7 @@
         height: max-content;
         min-height: calc(100vh + 53px);
         padding-bottom: 53px;
+        background: #fff;
 
         .divider {
             height: 1rem;

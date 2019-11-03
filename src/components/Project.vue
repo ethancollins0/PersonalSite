@@ -1,7 +1,9 @@
 <template>
-    <div class='project'>  <!-- hover to reveal cool features, flip card -->
+    <div class='project'>
         <div class='project-title'>
-            <img src='@/assets/water.pi.png' />
+            <div class='project-image'>
+                <img :src="require('@/assets/' + project.image_url)" />
+            </div>
             <div class='project-info'>
                 <span class='title-division'>
                     <h2>
@@ -63,11 +65,16 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            img {
-                height: auto;
-                width: 100%;
-            }
 
+            .project-image {
+                img {
+                    height: auto;
+                    min-height: 120px;
+                    max-height: 150px;
+                    width: 100%;
+                }
+            }
+            
             .project-info {
                 display: flex;
                 flex-direction: column;
