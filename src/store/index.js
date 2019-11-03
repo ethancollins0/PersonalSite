@@ -8,6 +8,11 @@ export default new Vuex.Store({
     siteSection: '',
     mobile: false,
     viewheight: 0,
+    social: {
+      github: 'https://github.com/ethancollins0',
+      linkedin: 'https://www.linkedin.com/in/ethan-t-collins/',
+      medium: 'https://medium.com/@ethantcollins98'
+    },
     projects: [
       {
         title: 'Water.pi',
@@ -15,15 +20,33 @@ export default new Vuex.Store({
         github: 'https://github.com/ethancollins0/capstone-frontend',
         image_url: '@/assets/water_pi.jpg',
         demo: 'https://capstone-frontend.firebaseapp.com/login',
-        technologies: ['Node.js,', 'Express.js,', 'Vue.js,', 'Vuex,', 'Socket.io,', 'Python,', 'PostgreSQL,', 'Raspberry Pi', ]
+        technologies: ['Node.js', 'Express.js', 'Vue.js', 'Vuex', 'Socket.io', 'Python', 'PostgreSQL', 'Raspberry Pi', ]
       },
       {
         title: 'Survey Manager',
-        description: 'A Web app for property managers to organize and schedule surveys',
+        description: 'A Web app to organize and schedule property surveys',
         github: 'https://github.com/ethancollins0/mod-4-frontend',
         image_url: '@/assets/water_pi.jpg',
         demo: 'https://survey-manager-9c175.firebaseapp.com/login',
-        technologies: ['Node.js,', 'Express.js,', 'React.js,', 'PostgreSQL']
+        technologies: ['Node.js', 'Express.js', 'React.js', 'PostgreSQL']
+      },
+
+      // test projects, remove
+      {
+        title: 'Water.pi',
+        description: 'A Web App to Automate Monitoring and Watering of Plants',
+        github: 'https://github.com/ethancollins0/capstone-frontend',
+        image_url: '@/assets/water_pi.jpg',
+        demo: 'https://capstone-frontend.firebaseapp.com/login',
+        technologies: ['Node.js', 'Express.js', 'Vue.js', 'Vuex', 'Socket.io', 'Python', 'PostgreSQL', 'Raspberry Pi', ]
+      },
+      {
+        title: 'Survey Manager',
+        description: 'A Web app to organize and schedule property surveys',
+        github: 'https://github.com/ethancollins0/mod-4-frontend',
+        image_url: '@/assets/water_pi.jpg',
+        demo: 'https://survey-manager-9c175.firebaseapp.com/login',
+        technologies: ['Node.js', 'Express.js', 'React.js', 'PostgreSQL']
       },
     ]
   },

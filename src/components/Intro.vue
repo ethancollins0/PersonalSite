@@ -1,10 +1,26 @@
 <template>
-    <div class='intro-container'>
+    <div id='home' class='intro-container'>
         <h1>Hi, I'm <span class='highlight'>Ethan Collins.</span></h1>
-        <h2>I'm a full-stack software developer.</h2>
-        <button class='intro-button'>See my Work <i></i> </button>
+        <h2>I'm a full-stack web developer.</h2>
+        <Social />
+        <button @click="handleClick" class='intro-button'>See my Work <i></i> </button>
     </div>
 </template>
+
+<script>
+    import Social from './Social'
+
+    export default {
+        methods: {
+            handleClick(){
+                document.querySelector('#navbar').scrollIntoView({ behavior: 'smooth' })
+            }
+        },
+        components: {
+            Social
+        }
+    }
+</script>
 
 <style lang='scss'>
     .intro-container {
@@ -21,15 +37,34 @@
         justify-content: center;
         border-bottom: 1px solid black;
 
+        h1 {
+            text-align: center;
+            color: #fff;
+        }
+        
+        h2 {
+            text-align: center;
+            color: #fff;
+        }
+
+
         .highlight {
-            color: red;
+            color: #ffa500;
+            font-weight: bold;
         }
 
         .intro-button {
             padding: 0 10px;
             border: 2px solid black;
             outline: none;
+            background-color: white;
+            color: black;
+            font-weight: bold;
         }
 
+        .intro-button:hover {
+            background-color: #333;
+            color: white;
+        }
     }
 </style>

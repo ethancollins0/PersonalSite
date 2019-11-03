@@ -4,9 +4,9 @@ import Index from '../views/Index'
 
 Vue.use(VueRouter)
 
-function index(){
-  router.history.push('/')
-}
+// function index(){
+//   router.history.push('/')
+// }
 
 const routes = [
   {
@@ -14,10 +14,14 @@ const routes = [
     name: 'index',
     component: Index
   },
-  {
-    beforeEnter: index,
-    path: '*',
-  }
+  // {
+  //   path: '/src/assets/Resume.pdf',
+  //   name: 'resume'
+  // },
+  // {
+  //   beforeEnter: index,
+  //   path: '*',
+  // }
 ]
 
 const router = new VueRouter({

@@ -1,16 +1,21 @@
 <template>
-    <div class='project' v-bind:class="{ mobile: mobile }">
-        <img src='@/assets/water_pi.jpg' />
-        <span class='project-links'>
-            <h3><span>{{project.title}}</span></h3>
-            <span> - </span>
-            <a target="_blank" :href="project.github">Git</a>
-            <span> - </span>
-            <a target="_blank" :href="project.demo">Demo</a>
-        </span>
-        <p>{{project.description}}</p>
-        <div class='technology-container'>
-            <span v-for="(technology, index) in project.technologies" :key="index">{{technology}} </span>
+    <div class='project'>  <!-- hover to reveal cool features, flip card -->
+        <div class='project-title'>
+            <img src='@/assets/water.pi.png' />
+            <div class='project-info'>
+                <span class='title-division'></span>
+                <span class='title-division'>
+                    <h2>{{project.title}}</h2>
+                </span>
+                <span class='title-division links'>
+                    <img src='@/assets/github.png' alt='github' @click="handleClick" />
+                    <a v-if="project.demo" :href="project.demo">Demo</a>
+                </span>
+            </div>
+        </div>
+        <p class='project-description'>{{ project.description }}</p>
+        <div class='project-masonry'>
+            <div class='project-brick' v-for="(technology, index) in project.technologies" :key="index">{{ technology }}</div>
         </div>
     </div>
 </template>
@@ -18,68 +23,103 @@
 <script>
     export default {
         props: {
-            project: Object,
+            project: Object
         },
-        computed: {
-            mobile(){
-                return this.$store.state.mobile
-            } 
-        },
-        mounted(){
-            if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-                this.$store.commit('mobile')
+        methods: {
+            handleClick(){
+                window.open(this.project.github, '_blank')
             }
-        },
+        }
     }
 </script>
 
 <style lang="scss">
     .project {
-        background: rgba(200, 200, 200, .8);
-        margin: 10px;
-        padding: 10px;
-        width: 45%;
+        flex-flow: row wrap;
+        min-width: 250px;
+        border-radius: 1px;
+        box-shadow: 5px 5px 10px black;
+        margin: 1vw;
+        padding: 20px;
+        width: 40%;
+        background-color: #f5f5f5;
         display: flex;
         flex-direction: column;
-        align-items: center;
-        border-radius: 2px;
+        align-content: center;
 
-        .project-links {
-            width: 100%;
+        .project-description {
             display: flex;
             justify-content: center;
-            align-items: center;
-            padding: 10px;
-            h3 {
-                padding-left: 10px;
-                padding-right: 10px;
-            }
-            a {
-                padding-left: 10px;
-                padding-right: 10px;
-
-            }
         }
 
-        img {
-            margin-top: 15px;
-            border-radius: 2px;;
-            width: 90%;
-            max-height: 220px;
-        }
-
-        h3 {
+        .project-title {
             display: flex;
-            justify-self: center;
-            width: max-content;
+            flex-direction: column;
+            align-items: center;
+            img {
+                height: auto;
+                width: 100%;
+            }
+
+            .project-info {
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                padding-bottom: 0.5rem;
+
+                .title-division:first-of-type {
+                    width: 30%;
+                }
+
+                .title-division:nth-of-type(2) {
+                    width: 40%;
+                    // background-color: black;
+                    display: flex;
+                    justify-content: center;
+                }
+
+
+
+                .links {
+                    width: 30%;
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                    img {
+                        height: 25px;
+                        width: auto;
+                        margin-right: 0.8rem;
+                    }
+
+                    img:hover {
+                        cursor: pointer;
+                    }
+
+                    a {
+                        margin-right: 0.8rem;
+                    }
+                }
+            }
+
         }
 
-        p {
-            padding: 10px;
-        }
-    }
+        .project-masonry {
+            display: flex;
+            flex-flow: row wrap;
+            margin-left: -8px;
+            width: 100%;
 
-    .mobile {
-        width: 90%;
+            .project-brick {
+                text-align: center;
+                border-radius: 3px;
+                background: #333;
+                color: #fff;
+                flex: auto;
+                height: 30px;
+                min-width: 20%;
+                margin: 0 8px 8px 0;
+                border: 1px solid black;
+            }
+        }
     }
 </style>
