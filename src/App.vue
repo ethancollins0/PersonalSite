@@ -13,6 +13,7 @@
   import Navbar from './components/Navbar'
   import About from './components/About'
   import Projects from './components/Projects'
+  const MailtoUI = require('../node_modules/mailtoui/dist/mailtoui-min.js')
 
   export default {
       components: {
@@ -27,6 +28,7 @@
       },
       mounted(){
         this.$store.commit('viewheight', window.innerHeight + 53)
+        MailtoUI.run()
       },
   };
 </script>

@@ -33,7 +33,8 @@
         flex-direction: column;
         flex-wrap: wrap;
         align-items: center;
-        height: calc(100vh + 53px);
+        height: max-content;
+        padding-bottom: 53px;
 
 
         .divider {

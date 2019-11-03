@@ -27,7 +27,7 @@
         },
         methods: {
             handleClick(){
-                window.open(this.project.github)
+                window.open(this.project.github, '_blank')
             }
         }
     }
