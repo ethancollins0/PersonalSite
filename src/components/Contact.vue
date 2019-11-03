@@ -207,7 +207,7 @@
                         height: max-content;
                         align-items: flex-end;
                         padding: 5px;
-                        background-color: rgb(139, 116, 86);
+                        background-color: rgb(200, 190, 176);
                         
                         input {
                             outline: none;

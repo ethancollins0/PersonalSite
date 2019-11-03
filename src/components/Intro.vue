@@ -54,7 +54,6 @@
         }
 
         .intro-button {
-            transition: .5s;
             padding: 0 10px;
             border: 2px solid black;
             outline: none;
@@ -66,6 +65,16 @@
         .intro-button:hover {
             background-color: #333;
             color: white;
+        }
+    }
+
+    @media screen and (max-width: 700px) {
+        .intro-container {
+                background: url('../assets/background.jpg') no-repeat center center; 
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
         }
     }
 </style>
