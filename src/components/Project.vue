@@ -70,7 +70,7 @@
                 img {
                     height: auto;
                     min-height: 120px;
-                    max-height: 150px;
+                    max-height: 180px;
                     width: 100%;
                 }
             }

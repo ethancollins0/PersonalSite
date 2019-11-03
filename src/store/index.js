@@ -8,6 +8,7 @@ export default new Vuex.Store({
     siteSection: '',
     mobile: false,
     viewheight: 0,
+    mailerUrl: 'https://personal-site-nodemailer.herokuapp.com/',
     blogs: [
       {
         title: 'Creating a RESTful API with Node.js and Express', 

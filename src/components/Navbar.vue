@@ -115,6 +115,7 @@
                 justify-content: flex-start;
 
                 li {
+                    transition: .5s;
                     padding: 0 1.5rem;
                     cursor: pointer;
                 }
