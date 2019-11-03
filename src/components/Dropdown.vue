@@ -14,7 +14,7 @@
         <v-list-item
           v-for="(item, index) in items"
           :key="index"
-          @click="console.log(item.title)"
+          @click="() => handleClick(item)"
         >
           <v-list-item-title>{{ item.title }}</v-list-item-title>
         </v-list-item>
@@ -35,8 +35,14 @@
       ],
     }),
     methods: {
-        handleClick(route){
-            this.$router.history.push(route)
+        handleClick(item){
+            const name = item.title.toLowerCase()
+                name == 'about'
+                    ? document.querySelector('#navbar').scrollIntoView({ behavior: 'smooth' })
+                    : document.querySelector(`#${name}`).scrollIntoView({ behavior: 'smooth' })
+                setTimeout(() => {
+                    console.log(screen.height, window.pageYOffset)
+                }, 3000)
         }
     }
   }
