@@ -15,6 +15,10 @@ const routes = [
     component: Index
   },
   {
+    path: '/Resume.pdf',
+    name: 'resume'
+  },
+  {
     beforeEnter: index,
     path: '*',
   }
