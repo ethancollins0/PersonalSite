@@ -4,10 +4,8 @@ import Index from '../views/Index'
 
 Vue.use(VueRouter)
 
-function index(to){
-  if (to.fullPath != '/Resume.pdf'){
-    router.history.push('/')
-  }
+function index(){
+  router.history.push('/')
 }
 
 const routes = [

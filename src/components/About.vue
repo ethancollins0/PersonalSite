@@ -4,7 +4,7 @@
             <h1>About</h1>
             <div class='about-content'>
                 <div class='about-text'>
-                    <p>Full-stack web developer with a background in computer science. Experience with both hardware and software. I went to college for 2 years pursuing a degree in computer engineering, where I took courses in computer logic, electronics, physics, and computer science, using software like MATLAB. I also have experience with AutoCAD, and reached state level for technical drafting in Texas in 2016.</p>
+                    <p>Full-stack web developer with a background in computer science. I went to college for 2 years pursuing a degree in computer engineering, where I took courses in computer science, computer logic, electronics, and physics, using software such as MATLAB. I also have experience with AutoCAD, and reached Texas state level for technical drafting in 2015. Graduated from Flatiron School Denver in October, 2019, where I learned Ruby on Rails, JavaScript, React.js, SQL, REST API, and agile software development.</p>
                 </div>
                 <div class='about-technologies-title'>
                     <h2>Technologies</h2>
