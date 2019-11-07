@@ -4,8 +4,10 @@ import Index from '../views/Index'
 
 Vue.use(VueRouter)
 
-function index(){
-  router.history.push('/')
+function index(to){
+  if (to.fullPath != '/Resume.pdf'){
+    router.history.push('/')
+  }
 }
 
 const routes = [
@@ -13,10 +15,6 @@ const routes = [
     path: '/',
     name: 'index',
     component: Index
-  },
-  {
-    path: '/Resume.pdf',
-    name: 'resume'
   },
   {
     beforeEnter: index,
