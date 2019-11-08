@@ -30,7 +30,7 @@
         -o-background-size: cover;
         background-size: cover;
 
-        height: calc(100vh + 53px);
+        height: calc(100vh - 4rem + 3px);
         display: flex;
         flex-direction: column;
         align-items: center;
