@@ -121,12 +121,12 @@
                 }
 
                 li:hover {
-                    color: red;
+                    color: #ffa500;
                 }
             }
 
             .active {
-                color: red;
+                color:  #ffa500;
             }
         }       
     }

@@ -5,7 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    siteSection: '',
+    siteSection: 'home',
     mobile: false,
     viewheight: 0,
     mailerUrl: 'https://personal-site-nodemailer.herokuapp.com/',

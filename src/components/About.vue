@@ -54,6 +54,11 @@
             justify-content: center;
             justify-content: flex-start;
 
+            h1 {
+                font-size: 25pt;
+                font-family: 'raleway-bold';
+            }
+
             .about-content {
                 width: 70%;
                 
@@ -67,6 +72,7 @@
                         border-bottom: 1px solid black;
                         display: flex;
                         justify-content: center;
+                        font-family: 'raleway-bold';
                     }
                 }
 

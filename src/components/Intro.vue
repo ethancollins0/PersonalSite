@@ -63,8 +63,8 @@
         }
 
         .intro-button:hover {
-            background-color: #333;
-            color: white;
+            background-color: #ffa500;
+            // color: white;
         }
     }
 
