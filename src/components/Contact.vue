@@ -257,7 +257,6 @@
                                 outline: none;
                                 height: 30px;
                                 width: 20%;
-                                // background: #fff;
                                 color: #000;
                                 border: 1px solid #000;
                                 color: #000;
@@ -280,8 +279,8 @@
 
                         button:hover {
                             transition: .5s;
-                            background: green;
-
+                            box-shadow: 0 0 7px black;
+                            font-size: 12.5pt;
                         }
                     }
                     
