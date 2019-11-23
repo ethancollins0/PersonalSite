@@ -77,10 +77,10 @@
                 }
 
                 .project-masonry {
-            display: flex;
-            flex-flow: row wrap;
-            margin-left: -8px;
-            width: 100%;
+                    display: flex;
+                    flex-flow: row wrap;
+                    margin-left: -8px;
+                    width: 100%;
 
             .project-brick:hover {
                 background: #474747;
@@ -98,7 +98,7 @@
                 height: 40px;
                 min-width: 70px;
                 min-width: 20%;
-                max-width: 250px;
+                max-width: 40%;
                 margin: 0 8px 8px 0;
                 border: 1px solid black;
             }

@@ -129,6 +129,7 @@
                 flex: auto;
                 height: 30px;
                 min-width: 20%;
+                max-width: 40%;
                 margin: 0 8px 8px 0;
                 border: 1px solid black;
             }
